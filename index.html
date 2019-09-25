@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Latest compiled and minified BOOTSTRAP CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <title>Online range scaling tool</title>
+</head>
+
+<body>
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">This tool is used to convert a value from a range to another knowing the min and the max of the current range, and the new min and max of the new range.
+            </p>
+            <p class="text-muted">I was looking for such kind of online tool for some time and I couldn't find any so I decided to create this website and also explain how to convert to the new range.
+            </p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <p class="text-muted">If you have any questions about this tool this is the <a href="https://github.com/combatistor/combatistor.github.io">GitHub repo</a>
+            </p>
+            <!-- <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          Online range scaling tool
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container pt-3 pb-3">
+    <div class="dropdown mt-3 mb-4">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Linear mapping
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Linear mapping</a>
+        <a class="dropdown-item" href="#">Logarithm mapping</a>
+      </div>
+    </div>
+
+    <form class="needs-validation" novalidate id="myForm">
+
+      <div class="input-group mt-4 mb-4">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="value">x</span>
+        </div>
+        <input id="x" type="number" class="form-control" placeholder="Value to rescale" aria-label="Value" aria-describedby="value" required>
+        <div class="invalid-feedback">Please enter a value.</div>
+      </div>
+
+      <div id="div-min_max" class="input-group mb-4">
+        <div class="input-group-prepend">
+          <span class="input-group-text">min - max</span>
+        </div>
+        <input id="min" type="number" class="form-control" placeholder="Current range min" aria-label="min" required>
+        <input id="max" type="number" class="form-control" placeholder="Current range max" aria-label="max" required>
+        <div id="min-max-feedback" class="invalid-feedback"></div>
+      </div>
+
+      <div class="input-group mb-4">
+        <div class="input-group-prepend">
+          <span class="input-group-text">a - b</span>
+        </div>
+        <input id="a" type="number" class="form-control" placeholder="New range min" aria-label="min" required>
+        <input id="b" type="number" class="form-control" placeholder="New range max" aria-label="max" required>
+        <div id="a-b-feedback" class="invalid-feedback"></div>
+      </div>
+    </form>
+
+    <button id="button-convert" type="submit" class="btn btn-secondary btn-lg btn-block mb-5" onclick="convert()">Convert!</button>
+
+    <h1 id="result">Result:</h1>
+  </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
