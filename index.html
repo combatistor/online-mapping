@@ -124,7 +124,7 @@
             \[f(x) = (x-min)\frac{b-a}{max-min}+a\]
           </p>
         </div>
-        <div class="d-lg-none">
+        <div class="d-none d-sm-block">
           <p>
             <p>
               In order to scale a range [min, max] to [a, b], you are looking for a continuous function that satisfies:
@@ -144,6 +144,35 @@
               In order to get the final function, we need to replace 0 and 1 by a and b, meaning to apply a translation and a scaling,
 
               \[f(min) = \frac{min-min}{max-min} = a \hspace{ 2pt }; \quad f(max) = \frac{max-min}{max-min} = b \]
+              \[\Longrightarrow \quad f(x) = \frac{x - min}{max - min} * (b-a) + a\]
+
+              <br>
+              \[f(x) = (x-min)\frac{b-a}{max-min}+a\]
+            </p>
+          </p>
+        </div>
+        <div class="d-sm-none">
+          <p>
+            <p>
+              In order to scale a range [min, max] to [a, b], you are looking for a continuous function that satisfies:
+              \[f(min) = a\]
+              \[f(max) = b\]
+
+              We can start by mapping [min, max] into the range [0, 1].
+              Putting min into a function and getting out 0 can be done with:
+
+              \[f(x) = x - min \quad \Longrightarrow \quad f(min) = min - min = 0\]
+
+              But putting in max would give us max - min when we want 1, so we'll have to scale it:
+
+              \[f(min) = \frac{min-min}{max-min} = 0 \]
+              \[f(max) = \frac{max - min}{max - min} = 1 \]
+              \[\Longrightarrow \quad f(x) = \frac{x - min}{max - min}\]
+
+              In order to get the final function, we need to replace 0 and 1 by a and b, meaning to apply a translation and a scaling,
+
+              \[f(min) = \frac{min-min}{max-min} = a \]
+              \[f(max) = \frac{max-min}{max-min} = b \]
               \[\Longrightarrow \quad f(x) = \frac{x - min}{max - min} * (b-a) + a\]
 
               <br>
