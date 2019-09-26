@@ -104,20 +104,22 @@
         <div class="d-none d-lg-block">
           <p>
             In order to scale a range [min, max] to [a, b], you are looking for a continuous function that satisfies:
-            \[f(min) = a\]
-            \[f(max) = b\]
+            \[f(min) = a \quad and \quad f(max) = b\]
 
             We can start by mapping [min, max] into the range [0, 1].
             Putting min into a function and getting out 0 can be done with:
 
-            \[f(x) = x - min \quad \Longrightarrow \quad f(\color{red} min \color{black}) = \color{red} min \color{black} - min = 0\]
+            \[f(\color{red} min \color{black}) = \color{red} min \color{black} - min = 0  \quad \Longrightarrow \quad f(x) = x - min \]
 
-            But putting in max would give us max - min when we want 1, so we'll have to scale it:
+            \[But\]
+
+            \[f(\color{red} max \color{black}) = \color{red} max \color{black} - min \neq 1 \]
+            So we have to scale it:
 
             \[f(\color{red} min \color{black}) = \frac{\color{red} min \color{black} - min}{max-min} = 0 \hspace{ 2pt }; \quad f(\color{red} max \color{black}) = \frac{ \color{red} max \color{black} - min}{max - min} = 1 \quad \Longrightarrow \quad
             f(x) = \frac{x - min}{max - min}\]
 
-            In order to get the final function, we need to replace 0 and 1 by a and b, meaning to apply a translation and a scaling,
+            In order to get the final function, we need to replace 0 and 1 by a and b, meaning to apply a translation and a scaling:
 
             \[f(\color{red} min \color{black}) = \frac{ \color{red} min \color{black} - min}{max - min} = a \hspace{ 2pt }; \quad f(\color{red} max \color{black}) = \frac{\color{red} max \color{black} - min}{max-min} = b \quad \Longrightarrow \quad
             f(x) = \frac{x - min}{max - min} * (b-a) + a\]
@@ -129,20 +131,22 @@
         <div class="d-none d-md-block d-lg-none">
           <p>
             In order to scale a range [min, max] to [a, b], you are looking for a continuous function that satisfies:
-            \[f(min) = a\]
-            \[f(max) = b\]
+            \[f(min) = a \quad and \quad f(max) = b\]
 
             We can start by mapping [min, max] into the range [0, 1].
             Putting min into a function and getting out 0 can be done with:
 
-            \[f(x) = x - min \quad \Longrightarrow \quad f(\color{red} min \color{black}) = \color{red} min \color{black} - min = 0\]
+            \[f(\color{red} min \color{black}) = \color{red} min \color{black} - min = 0 \quad \Longrightarrow \quad f(x) = x - min \]
 
-            But putting in max would give us max - min when we want 1, so we'll have to scale it:
+            \[But\]
+
+            \[f(\color{red} max \color{black}) = \color{red} max \color{black} - min \neq 1 \]
+            So we have to scale it:
 
             \[f(\color{red} min \color{black}) = \frac{\color{red} min \color{black} - min}{max-min} = 0 \hspace{ 2pt }; \quad f(\color{red} max \color{black}) = \frac{\color{red} max \color{black} - min}{max - min} = 1 \]
             \[\Longrightarrow \quad f(x) = \frac{x - min}{max - min}\]
 
-            In order to get the final function, we need to replace 0 and 1 by a and b, meaning to apply a translation and a scaling,
+            In order to get the final function, we need to replace 0 and 1 by a and b, meaning to apply a translation and a scaling:
 
             \[f(\color{red} min \color{black}) = \frac{\color{red} min \color{black} - min}{max-min} = a \hspace{ 2pt }; \quad f(\color{red} max \color{black}) = \frac{\color{red} max \color{black} - min}{max - min} = b \]
             \[\Longrightarrow \quad f(x) = \frac{x - min}{max - min} * (b-a) + a\]
@@ -154,22 +158,24 @@
         <div class="d-block d-sm-block d-md-none">
           <p>
             In order to scale a range [min, max] to [a, b], you are looking for a continuous function that satisfies:
-            \[f(min) = a\]
-            \[f(max) = b\]
+            \[f(min) = a \quad and \quad f(max) = b\]
 
             We can start by mapping [min, max] into the range [0, 1].
             Putting min into a function and getting out 0 can be done with:
 
-            \[f(x) = x - min\]
-            \[\Longrightarrow \quad f(\color{red} min \color{black}) = \color{red} min \color{black} - min = 0\]
+            \[f(\color{red} min \color{black}) = \color{red} min \color{black} - min = 0\]
+            \[\Longrightarrow \quad f(x) = x - min\]
 
-            But putting in max would give us max - min when we want 1, so we'll have to scale it:
+            \[But\]
+
+            \[f(\color{red} max \color{black}) = \color{red} max \color{black} - min \neq 1 \]
+            So we have to scale it:
 
             \[f(\color{red} min \color{black}) = \frac{\color{red} min \color{black} - min}{max - min} = 0 \]
             \[f(\color{red} max \color{black}) = \frac{\color{red} max \color{black} - min}{max - min} = 1 \]
             \[\Longrightarrow \quad f(x) = \frac{x - min}{max - min}\]
 
-            In order to get the final function, we need to replace 0 and 1 by a and b, meaning to apply a translation and a scaling,
+            In order to get the final function, we need to replace 0 and 1 by a and b, meaning to apply a translation and a scaling:
 
             \[f(\color{red} min \color{black}) = \frac{\color{red} min \color{black} - min}{max-min} = a \]
             \[f(\color{red} max \color{black}) = \frac{\color{red} max \color{black} - min}{max-min} = b \]
