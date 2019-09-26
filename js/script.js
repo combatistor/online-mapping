@@ -8,12 +8,14 @@ var method = MapMethods.LINEAR;
 
 $('.dropdown-menu a').on('click', function() {
   $('.dropdown-toggle').html($(this).html());
-  console.log();
   if ($(this).index() == 0) {
     method = MapMethods.LINEAR;
   } else {
     method = MapMethods.LOGARITHM;
   }
+
+  resetInputsValidation();
+  setText($('#result'), 'Result:');
 });
 
 function convert() {
@@ -111,17 +113,34 @@ function convert() {
 }
 
 function map(x, min, max, a, b) {
-  return ((b - a) * (x - min)) / (max - min) + a;
+  return ((x - min) * (b - a)) / (max - min) + a;
 }
 
 function mapLog(x, min, max, a, b) {
   var logA = Math.log(a);
   var logB = Math.log(b);
-  return Math.exp(((logB - logA) * (x - min)) / (max - min) + logA);
+  return Math.exp(((x - min) * (logB - logA)) / (max - min) + logA);
 }
 
 function setText(what, text) {
   what.text(text);
+}
+
+function resetInputsValidation(){
+  $('#x').removeClass('is-invalid');
+  $('#x').removeClass('is-valid');
+
+  $('#min').removeClass('is-invalid');
+  $('#min').removeClass('is-valid');
+
+  $('#max').removeClass('is-invalid');
+  $('#max').removeClass('is-valid');
+
+  $('#a').removeClass('is-invalid');
+  $('#a').removeClass('is-valid');
+
+  $('#b').removeClass('is-invalid');
+  $('#b').removeClass('is-valid');
 }
 
 function setValid(what) {

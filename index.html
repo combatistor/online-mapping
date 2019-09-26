@@ -28,7 +28,7 @@
           </div>
           <div class="col-sm-4 offset-md-1 py-4">
             <h4 class="text-white">Contact</h4>
-            <p class="text-muted">If you have any questions about this tool this is the <a href="https://github.com/combatistor/combatistor.github.io">GitHub repo</a>
+            <p class="text-muted">If you have any questions about this tool this is the <a href="https://github.com/combatistor/online-mapping">GitHub repo</a>
             </p>
             <!-- <ul class="list-unstyled">
               <li><a href="#" class="text-white">Follow on Twitter</a></li>
@@ -64,7 +64,7 @@
 
     <form class="needs-validation" novalidate id="myForm">
 
-      <div class="input-group mt-4 mb-4">
+      <div class="input-group mb-4">
         <div class="input-group-prepend">
           <span class="input-group-text" id="value">x</span>
         </div>
@@ -93,13 +93,74 @@
 
     <button id="button-convert" type="submit" class="btn btn-secondary btn-lg btn-block mb-5" onclick="convert()">Convert!</button>
 
-    <h1 id="result">Result:</h1>
+    <h1 class="text-break mb-5" id="result">Result:</h1>
+
+    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseDetails" aria-expanded="false" aria-controls="collapseDetails">
+      Details
+    </button>
+
+    <div id="collapseDetails" class="collapse">
+      <div class="card card-body">
+        <div class="d-none d-lg-block">
+          <p>
+            In order to scale a range [min, max] to [a, b], you are looking for a continuous function that satisfies:
+            \[f(min) = a\]
+            \[f(max) = b\]
+
+            We can start by mapping [min, max] into the range [0, 1].
+            Putting min into a function and getting out 0 can be done with:
+
+            \[f(x) = x - min \quad \Longrightarrow \quad f(min) = min - min = 0\]
+
+            But putting in max would give us max - min when we want 1, so we'll have to scale it:
+
+            \[f(min) = \frac{min-min}{max-min} = 0 \hspace{ 2pt }; \quad f(max) = \frac{max - min}{max - min} = 1 \quad \Longrightarrow \quad f(x) = \frac{x - min}{max - min}\]
+
+            In order to get the final function, we need to replace 0 and 1 by a and b, meaning to apply a translation and a scaling,
+
+            \[f(min) = \frac{min-min}{max-min} = a \hspace{ 2pt }; \quad f(max) = \frac{max-min}{max-min} = b \quad \Longrightarrow \quad f(x) = \frac{x - min}{max - min} * (b-a) + a\]
+
+            <br>
+            \[f(x) = (x-min)\frac{b-a}{max-min}+a\]
+          </p>
+        </div>
+        <div class="d-lg-none">
+          <p>
+            <p>
+              In order to scale a range [min, max] to [a, b], you are looking for a continuous function that satisfies:
+              \[f(min) = a\]
+              \[f(max) = b\]
+
+              We can start by mapping [min, max] into the range [0, 1].
+              Putting min into a function and getting out 0 can be done with:
+
+              \[f(x) = x - min \quad \Longrightarrow \quad f(min) = min - min = 0\]
+
+              But putting in max would give us max - min when we want 1, so we'll have to scale it:
+
+              \[f(min) = \frac{min-min}{max-min} = 0 \hspace{ 2pt }; \quad f(max) = \frac{max - min}{max - min} = 1 \]
+              \[\Longrightarrow \quad f(x) = \frac{x - min}{max - min}\]
+
+              In order to get the final function, we need to replace 0 and 1 by a and b, meaning to apply a translation and a scaling,
+
+              \[f(min) = \frac{min-min}{max-min} = a \hspace{ 2pt }; \quad f(max) = \frac{max-min}{max-min} = b \]
+              \[\Longrightarrow \quad f(x) = \frac{x - min}{max - min} * (b-a) + a\]
+
+              <br>
+              \[f(x) = (x-min)\frac{b-a}{max-min}+a\]
+            </p>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <script src="js/script.js"></script>
 </body>
